@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.Urls.Add("http://5.187.4.144:5000/");
-app.Urls.Add("http://localhost:5000/");
+//app.Urls.Add("http://localhost:5000/");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
