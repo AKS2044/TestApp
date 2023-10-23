@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Host.ConfigureWebHostDefaults(webBuilder =>
 {
-    webBuilder.UseUrls("http://0.0.0.0:5000");
+    webBuilder.UseUrls("http://0.0.0.0:443");
 });
 
 builder.Services.AddCors(p => p.AddPolicy("default", opt =>
