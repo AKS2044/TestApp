@@ -17,7 +17,7 @@ builder.Services.AddCors(p => p.AddPolicy("default", opt =>
 
 var app = builder.Build();
 
-app.Urls.Add("https://5.187.4.144:443/");
+app.Urls.Add("http://5.187.4.144:5000/");
 //app.Urls.Add("http://localhost:5000/");
 
 // Configure the HTTP request pipeline.
