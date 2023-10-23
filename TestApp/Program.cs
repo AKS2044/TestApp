@@ -7,20 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Host.ConfigureWebHostDefaults(webBuilder =>
-{
-    webBuilder.UseUrls("http://0.0.0.0:443");
-});
-
-builder.Services.AddCors(p => p.AddPolicy("default", opt =>
-{
-    opt.AllowAnyHeader()
-    .AllowCredentials()
-    .AllowAnyMethod()
-    .SetIsOriginAllowed(_ => true);
-}));
-
 var app = builder.Build();
+
+app.Urls.Add("http://5.187.4.144:5000/");
+app.Urls.Add("http://localhost:5000/");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -29,7 +20,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("default");
 app.UseAuthorization();
 
 app.MapControllers();
