@@ -6,6 +6,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Host.ConfigureWebHostDefaults(webBuilder =>
+{
+    webBuilder.UseUrls("http://0.0.0.0:5000");
+});
+
 builder.Services.AddCors(p => p.AddPolicy("default", opt =>
 {
     opt.AllowAnyHeader()
